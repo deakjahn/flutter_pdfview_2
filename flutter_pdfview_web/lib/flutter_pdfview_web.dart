@@ -15,9 +15,9 @@ class FlutterPDFView {
   int defaultPage = 0;
 
   FlutterPDFView(this.viewId) {
-    final id = 'dropzone-container-$viewId';
+    final id = 'pdfview-canvas-$viewId';
     canvas = CanvasElement()
-      ..id = 'pdfview-canvas-$viewId'
+      ..id = id
       ..style.border = 'none'
       ..style.backgroundColor = 'white'
       ..style.pointerEvents = 'auto'
