@@ -1,3 +1,4 @@
 # Project exclude paths
 /flutter_pdfview_platform_interface/.dart_tool/
 /flutter_pdfview_web/.dart_tool/
+/.idea/
