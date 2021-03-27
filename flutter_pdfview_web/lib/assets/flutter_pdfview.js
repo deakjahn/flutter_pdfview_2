@@ -68,11 +68,13 @@ requirejs(['pdfjs-dist/build/pdf', 'pdfjs-dist/build/pdf.worker'], function(pdfj
     },
 
     createPath: function(canvas, path, defaultPage, onRender, onError) {
-      canvas.FlutterPDFView = new FlutterPDFView(canvas, path, null, defaultPage, onRender, onError);
+      if (canvas.FlutterPDFView === undefined)
+        canvas.FlutterPDFView = new FlutterPDFView(canvas, path, null, defaultPage, onRender, onError);
     },
 
     createData: function(canvas, data, defaultPage, onRender, onError) {
-      canvas.FlutterPDFView = new FlutterPDFView(canvas, null, data, defaultPage, onRender, onError);
+      if (canvas.FlutterPDFView === undefined)
+        canvas.FlutterPDFView = new FlutterPDFView(canvas, null, data, defaultPage, onRender, onError);
     },
   };
 
