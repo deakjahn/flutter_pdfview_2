@@ -21,24 +21,28 @@ class MethodChannelFlutterPDFView extends FlutterPDFViewPlatform {
 
   @override
   Future<int> getPageCount({required int viewId}) async {
-    return await _channels[viewId]!.invokeMethod('pageCount');
+    final result = await _channels[viewId]!.invokeMethod('pageCount');
+    return result!;
   }
 
   @override
   Future<int> getCurrentPage({required int viewId}) async {
-    return await _channels[viewId]!.invokeMethod('getCurrentPage');
+    final result = await _channels[viewId]!.invokeMethod('getCurrentPage');
+    return result!;
   }
 
   @override
   Future<bool> setPage(int page, {required int viewId}) async {
-    return await _channels[viewId]!.invokeMethod('setPage', <String, dynamic>{
+    final result = await _channels[viewId]!.invokeMethod('setPage', <String, dynamic>{
       'page': page,
     });
+    return result!;
   }
 
   @override
   Future<void> updateSettings(Map<String, dynamic> settings, {required int viewId}) async {
-    return await _channels[viewId]!.invokeMethod('updateSettings', settings);
+    final result = await _channels[viewId]!.invokeMethod('updateSettings', settings);
+    return result!;
   }
 
   Future<dynamic> _onMethodCall(MethodCall call, int viewId) async {
