@@ -34,8 +34,8 @@ class PDFViewFlutterPlugin extends FlutterPDFViewPlatform {
     var foundRequireJs = false;
     var foundPdfViewJs = false;
     for (html.ScriptElement script in html.document.body!.querySelectorAll('script')) {
-      if (script.src.contains('assets/packages/flutter_pdfview_web/assets/require.js')) foundRequireJs = true;
-      if (script.src.contains('assets/packages/flutter_pdfview_web/assets/flutter_pdfview.js')) foundPdfViewJs = true;
+      if (script.src.contains('flutter_pdfview_web/assets/require.js')) foundRequireJs = true;
+      if (script.src.contains('flutter_pdfview_web/assets/flutter_pdfview.js')) foundPdfViewJs = true;
     }
 
     if (!foundRequireJs) {
