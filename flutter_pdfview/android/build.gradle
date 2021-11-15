@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:4.0.1'
+    classpath 'com.android.tools.build:gradle:4.0.2'
   }
 }
 
@@ -33,9 +33,13 @@ android {
     disable 'InvalidPackage'
     checkReleaseBuilds false
   }
+  tasks.withType(JavaCompile) {
+    configure(options) {
+      options.compilerArgs << '-Xlint:deprecation'
+    }
+  }
 }
 
 dependencies {
   implementation 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
 }
-
